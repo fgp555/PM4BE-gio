@@ -9,7 +9,7 @@ import PATHROUTES from '@/helpers/PathRoutes';
 const CartPage = () => {
   const [cart, setCart] = useState<IProduct[]>([]);
   const [total, setTotal] = useState<number>(0);
-  const { dataUser } = useAuth();
+  const { dataUser,updateCart } = useAuth();
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -31,6 +31,7 @@ const CartPage = () => {
     setCart([]);
     setTotal(0);
     localStorage.removeItem('cart');
+    updateCart()
   };
 
   const handleRemoveProduct = (productId: number) => {
@@ -40,6 +41,7 @@ const CartPage = () => {
     setCart(updatedCart);
     setTotal(updatedTotal);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
+    updateCart()
   };
 
   return (

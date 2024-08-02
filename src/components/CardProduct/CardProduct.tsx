@@ -6,7 +6,7 @@ import { useAuth } from "@/context/AuthContext";
 import PATHROUTES from "@/helpers/PathRoutes";
 import Link from "next/link";
 const CardProduct: React.FC<IProduct> = ({ id, name, description, price, image, stock, categoryId }) => {
-  const { dataUser } = useAuth();
+  const { dataUser,updateCart } = useAuth();
 
   const handleAddToCart = () => {
     if (!dataUser?.token) {
@@ -25,6 +25,8 @@ const CardProduct: React.FC<IProduct> = ({ id, name, description, price, image, 
         alert("Product added to cart");
       }
     }
+
+    updateCart();
   };
 
   return (

@@ -58,7 +58,7 @@ export const Register = () => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className="w-full max-w-sm bg-white rounded-lg shadow-md p-6 relative">
+      <div className="w-full max-w-sm bg-white rounded-lg shadow-md p-6 relative overflow-auto max-h-screen">
         <button 
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
           onClick={() => router.push(PATHROUTES.HOME)}
@@ -77,7 +77,7 @@ export const Register = () => {
               value={userData.email}
               placeholder='user@example.com'
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-blue-700" // Añadido text-blue-700
               required
             />
             {errorUser.email && <p className="font-light text-xs text-red-500">{errorUser.email}</p>}
@@ -92,7 +92,7 @@ export const Register = () => {
               value={userData.password}
               placeholder='******'
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-blue-700" // Añadido text-blue-700
               required
             />
             {errorUser.password && <p className="font-light text-xs text-red-500">{errorUser.password}</p>}
@@ -107,7 +107,7 @@ export const Register = () => {
               value={userData.confirmPassword}
               placeholder='******'
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-blue-700" // Añadido text-blue-700
               required
             />
             {errorUser.confirmPassword && <p className="font-light text-xs text-red-500">{errorUser.confirmPassword}</p>}
@@ -122,7 +122,7 @@ export const Register = () => {
               value={userData.name}
               placeholder='Juan'
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-blue-700" // Añadido text-blue-700
               required
             />
             {errorUser.name && <p className="font-light text-xs text-red-500">{errorUser.name}</p>}
@@ -137,14 +137,14 @@ export const Register = () => {
               value={userData.address}
               placeholder='Calle 123'
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-blue-700" // Añadido text-blue-700
               required
             />
             {errorUser.address && <p className="font-light text-xs text-red-500">{errorUser.address}</p>}
           </div>
 
           <div className="mb-4">
-            <label htmlFor="phone" className="inline-block px-3 py-px mb-2 text-xs font-semibold tracking-wider text-teal-900uppercase rounded-full bg-teal-accent-400">Phone</label>
+            <label htmlFor="phone" className="inline-block px-3 py-px mb-2 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">Phone</label>
             <input
               type="text"
               id="phone"
@@ -152,7 +152,7 @@ export const Register = () => {
               value={userData.phone}
               placeholder='1234567890'
               onChange={handleChange}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-blue-700" // Añadido text-blue-700
               required
             />
             {errorUser.phone && <p className="font-light text-xs text-red-500">{errorUser.phone}</p>}

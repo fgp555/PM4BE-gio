@@ -9,15 +9,15 @@ import { logoutUser } from "@/helpers/auth.helper";
 import IProduct from "@/interfaces/IProduct";
 
 const Navbar = () => {
-  const { dataUser, setDataUser } = useAuth();
+  const { dataUser, setDataUser, cartItemCount} = useAuth();
   const router = useRouter();
-  const [cartItemCount, setCartItemCount] = useState<number>(0);
+  // const [cartItemCount, setCartItemCount] = useState<number>(0);
 
   useEffect(() => {
     const cart = localStorage.getItem("cart");
     if (cart) {
       const items: IProduct[] = JSON.parse(cart);
-      setCartItemCount(items.length);
+      // setCartItemCount(items.length);
     }
   }, []);
 

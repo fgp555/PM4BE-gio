@@ -1,41 +1,61 @@
-'use client';
-import { userSessionProps } from '@/interfaces/IAuth';
-import { createContext, useContext, useState, useEffect } from 'react';
+"use client";
+import { userSessionProps } from "@/interfaces/IAuth";
+import { createContext, useContext, useState, useEffect } from "react";
 
 interface AuthContextProps {
-    dataUser: userSessionProps | null;
-    setDataUser: (userData: userSessionProps | null) => void;
+  dataUser: userSessionProps | null;
+  setDataUser: (userData: userSessionProps | null) => void;
+  updateCart: () => void;
+  cartItemCount: number;
 }
 
 const AuthContext = createContext<AuthContextProps>({
-    dataUser: null,
-    setDataUser: () => { },
+  dataUser: null,
+  setDataUser: () => {},
+  updateCart: () => {},
+  cartItemCount: 0,
 });
 
 interface AuthProviderProps {
-    children: React.ReactElement;
+  children: React.ReactElement;
 }
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-    const [userData, setUserData] = useState<userSessionProps | null>(null);
+  const [userData, setUserData] = useState<userSessionProps | null>(null);
+  const [cartItemCount, setCartItemCount] = useState<number>(0);
 
-    useEffect(() => {
-        if (userData) {
-            localStorage.setItem('userSession', JSON.stringify(userData));
-        }
-    }, [userData]);
+  useEffect(() => {
+    if (userData) {
+      localStorage.setItem("userSession", JSON.stringify(userData));
+    }
+  }, [userData]);
 
-    useEffect(() => {
-        if (typeof window !== 'undefined' && window.localStorage) {
-            const data = localStorage.getItem('userSession');
-            setUserData(JSON.parse(data!));
-        }
-    }, [])
+  // src/context/AuthContext.tsx
 
-    return (
-        <AuthContext.Provider value={{ dataUser: userData, setDataUser: setUserData }}>
-            {children}
-        </AuthContext.Provider>
-    );
-}
+  const updateCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    setCartItemCount(cart.length);
+  };
 
-export const useAuth = () => useContext(AuthContext)
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const data = localStorage.getItem("userSession");
+      setUserData(JSON.parse(data!));
+    }
+    updateCart();
+  }, []);
+  return (
+    <AuthContext.Provider
+      value={{
+        dataUser: userData,
+        setDataUser: setUserData,
+        updateCart,
+        cartItemCount,
+        //
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => useContext(AuthContext);
