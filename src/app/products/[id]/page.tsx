@@ -74,9 +74,7 @@ const ProductID = ({ params: { id } }: { params: { id: string } }) => {
 
   return (
     <div className="container mx-auto my-8 p-4 border rounded shadow-lg">
-      <h3 className="text-lg font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-        {productObject?.name}
-      </h3>
+      <h3 className="text-lg font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">{productObject?.name}</h3>
       <div className="flex justify-center mb-4">
         <Image
           className="object-contain h-64 w-full max-w-md"
@@ -87,9 +85,7 @@ const ProductID = ({ params: { id } }: { params: { id: string } }) => {
         />
       </div>
       <p className="text-base text-gray-700 md:text-lg">{productObject?.description}</p>
-      <p className="text-lg font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-        ${productObject?.price}
-      </p>
+      <p className="text-lg font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">${productObject?.price}</p>
       <p className="text-gray-600 mb-4">Stock: {productObject?.stock}</p>
       <button
         onClick={handleSubmit}
