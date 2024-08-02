@@ -7,7 +7,7 @@ import productsPreload from "@/helpers/productsPreload";
 import { useState, useEffect } from "react";
 import IProduct from "@/interfaces/IProduct";
 import { fetchProducts } from "@/helpers/fetchProduct.helper";
-
+ 
 const Products = () => {
   // Cambiar 'export const Products' a 'const Products'
   const [products, setProducts] = useState<IProduct[]>([]);
