@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import PATHROUTES from '@/helpers/PathRoutes';
+import Image from 'next/image';
 
 const AboutUs = () => {
     return (
@@ -17,17 +18,17 @@ const AboutUs = () => {
                     <h3 className="text-2xl font-bold text-gray-800 mb-4">Nuestro Equipo</h3>
                     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                         <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-md">
-                            <img src="https://via.placeholder.com/150" alt="Miembro del equipo" className="w-24 h-24 rounded-full mx-auto mb-4" />
+                            <Image  src="https://via.placeholder.com/150" alt="Miembro del equipo" className="w-24 h-24 rounded-full mx-auto mb-4" />
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">Juan Pérez</h4>
                             <p className="text-gray-600">CEO y Fundador</p>
                         </div>
                         <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-md">
-                            <img src="https://via.placeholder.com/150" alt="Miembro del equipo" className="w-24 h-24 rounded-full mx-auto mb-4" />
+                            <Image src="https://via.placeholder.com/150" alt="Miembro del equipo" className="w-24 h-24 rounded-full mx-auto mb-4" />
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">María Gómez</h4>
                             <p className="text-gray-600">Directora de Marketing</p>
                         </div>
                         <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-md">
-                            <img src="https://via.placeholder.com/150" alt="Miembro del equipo" className="w-24 h-24 rounded-full mx-auto mb-4" />
+                            <Image src="https://via.placeholder.com/150" alt="Miembro del equipo" className="w-24 h-24 rounded-full mx-auto mb-4" />
                             <h4 className="text-xl font-semibold text-gray-800 mb-2">Carlos Ruiz</h4>
                             <p className="text-gray-600">Desarrollador Principal</p>
                         </div>

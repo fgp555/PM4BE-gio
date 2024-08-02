@@ -36,12 +36,12 @@ export const Register = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-    const errors = validateRegisterForm(userData);
-if (Object.values(errors).some((error) => error !== '')) {
-  alert('Password and confirm password do not match');
-  setErrorUser(errors);
-  return;
-}
+      const errors = validateRegisterForm(userData);
+      if (Object.values(errors).some((error) => error !== '')) {
+        alert('Password and confirm password do not match');
+        setErrorUser(errors);
+        return;
+      }
       await RegisterUser(userData);
       alert('Usuario registrado exitosamente');
       router.push(PATHROUTES.LOGIN);
@@ -55,7 +55,7 @@ if (Object.values(errors).some((error) => error !== '')) {
     const errors = validateRegisterForm(userData);
     setErrorUser(errors);
     console.log(errorUser);
-  }, [userData]);
+  }, [userData, errorUser]); // Añadir errorUser como dependencia
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">

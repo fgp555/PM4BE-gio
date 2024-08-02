@@ -50,10 +50,10 @@ const HomeContainer = () => {
           </div>
         </div>
         <div>
-          <img
+          <Image
             src="https://kitwind.io/assets/kometa/two-thirds-phone.png"
             className="object-cover object-top w-full h-64 mx-auto lg:h-auto xl:mr-24 md:max-w-sm"
-            alt="Productos electrónicos"
+            alt="Productos electrónicos" width={500} height={500}
           />
         </div>
       </div>

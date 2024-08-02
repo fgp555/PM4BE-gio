@@ -1,10 +1,11 @@
 import React from 'react';
 import IProduct from '../../interfaces/IProduct';
+import Image from 'next/image';
 
 const ProductDetail  = ({ product }: { product: IProduct}) => {
   return (
     <div className="flex">
-      <img className="w-1/2 h-auto rounded-lg shadow-lg" src={product.image} alt={product.name} />
+      <Image className="w-1/2 h-auto rounded-lg shadow-lg" src={product.image} alt={product.name} />
       <div className="w-1/2 ml-8">
         <p className="text-xl mb-4">{product.description}</p>
         <p className="text-3xl font-bold mb-4">${product.price}</p>

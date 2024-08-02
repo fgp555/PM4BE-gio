@@ -18,7 +18,7 @@ const NotFound = () => {
     <div className="bg-gray-100 flex items-center justify-center h-screen">
       <section className="text-center bg-white p-8 rounded-lg shadow-md">
         <h3 className="text-3xl font-semibold text-teal-900 mb-6">UPS! 404 Page not found</h3>
-        <p className="text-gray-700">Don't worry, we have more products for you.</p>
+        <p className="text-gray-700">Don&apos;t worry, we have more products for you.</p> {/* Corrección aquí */}
         <p className="text-gray-500 mt-4">Redirecting to the homepage in 5 seconds...</p>
       </section>
     </div>

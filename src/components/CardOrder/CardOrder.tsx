@@ -1,3 +1,4 @@
+import Image from "next/image";
 import IProduct from "../../interfaces/IProduct";
 import React from "react";
 
@@ -14,7 +15,7 @@ const CardOrder = ({ date, orders }: CardOrderProps) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {orders?.map((product) => (
                     <div key={product.id} className="bg-white shadow-md rounded-lg p-4">
-                        <img src={product.image} 
+                        <Image src={product.image} 
                         alt={product.name} 
                         className=
                         // "w-full h-48 object-cover mb-4 rounded-lg" />
