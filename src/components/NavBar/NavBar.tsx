@@ -7,8 +7,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { logoutUser } from "@/helpers/auth.helper";
 import IProduct from "@/interfaces/IProduct";
-import { Provider } from "react-redux";
-import store from "@/store";
 
 const Navbar = () => {
   const { dataUser, setDataUser } = useAuth();
@@ -33,7 +31,6 @@ const Navbar = () => {
 
   return (
     <nav className="relative bg-white shadow dark:bg-gray-800">
-      <Provider store={store}>
         <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
           <div className="flex place-items-stretch">
             <Link href={PATHROUTES.HOME}>
@@ -105,7 +102,6 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-      </Provider>
     </nav>
   );
 };
