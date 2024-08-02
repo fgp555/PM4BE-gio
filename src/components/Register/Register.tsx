@@ -54,8 +54,7 @@ export const Register = () => {
   useEffect(() => {
     const errors = validateRegisterForm(userData);
     setErrorUser(errors);
-    console.log(errorUser);
-  }, [userData, errorUser]); // Añadir errorUser como dependencia
+  }, [userData]); // Eliminar errorUser de las dependencias
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -145,7 +144,7 @@ export const Register = () => {
           </div>
 
           <div className="mb-4">
-            <label htmlFor="phone" className="inline-block px-3 py-px mb-2 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">Phone</label>
+            <label htmlFor="phone" className="inline-block px-3 py-px mb-2 text-xs font-semibold tracking-wider text-teal-900uppercase rounded-full bg-teal-accent-400">Phone</label>
             <input
               type="text"
               id="phone"

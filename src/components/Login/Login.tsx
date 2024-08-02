@@ -13,8 +13,8 @@ export const Login = () => {
   const router = useRouter();
 
   const [userData, setUserData] = useState<LoginProps>({
-    email: '',
-    password: '',
+    email: 'User123s@mail.com', // Valor por defecto
+    password: 'P4ssW0rd',       // Valor por defecto
   });
 
   const [errorUser, setErrorUser] = useState<LoginErrorProps>({
@@ -42,11 +42,14 @@ export const Login = () => {
     }
   };
 
+  const handleClose = () => {
+    router.push(PATHROUTES.HOME);
+  };
+
   useEffect(() => {
     const errors = validateLoginForm(userData);
     setErrorUser(errors);
-    console.log(errorUser);
-  }, [userData, errorUser]); // Añadir errorUser como dependencia
+  }, [userData]); // Eliminar errorUser de las dependencias
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
@@ -54,7 +57,7 @@ export const Login = () => {
         <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8 relative">
           <button 
             className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-            onClick={() => router.push(PATHROUTES.HOME)}
+            onClick={handleClose} // Usar la función handleClose
             aria-label="Close"
           >
             &times;
@@ -71,7 +74,7 @@ export const Login = () => {
                 value={userData.email}
                 placeholder='user@example.com'
                 onChange={handleChange}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-blue-700" // Añadido text-blue-700
                 required
               />
               {errorUser.email && <p className="font-light text-xs text-red-500">{errorUser.email}</p>}
@@ -86,7 +89,7 @@ export const Login = () => {
                 value={userData.password}
                 placeholder='******'
                 onChange={handleChange}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-blue-700" // Añadido text-blue-700
                 required
               />
               {errorUser.password && <p className="font-light text-xs text-red-500">{errorUser.password}</p>}
